@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/css/util.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+<!--===============================================================================================-->
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  
+  <div class="form-group w3-theme-l5" style="text-align:center;">
+      <div class="w3-theme-l5">
+        <input style="padding-left: 50px;" type="file" id="xmlFile" (change)="onFileChange($event)" #fileInput></div>
+   
+   
+ <!-- </div>
+  <div id="btnContainer" class="w3-theme-l5" style="text-align:center;"> -->
+  <button style="display:inline-block;margin-right:20px;" type="submit" [disabled]="form.invalid || loading" class="btn btn-success">Submit <i class="fa fa-spinner fa-spin fa-fw" *ngIf="loading"></i></button>
+  <button style="display:inline-block;margin-left:20px;"type="button" class="btn btn-sm btn-default" (click)="clearFile()">Clear File</button></div>
+<!-- <div>
+  <mat-table [dataSource]="finalResult">
+    <ng-container matColumnDef="key">
+      <mat-header-cell *matHeaderCellDef> Identifier </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.key}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="value">
+      <mat-header-cell *matHeaderCellDef> Value </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.value}} </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+  </mat-table>
+</div> -->
+<!-- <div class="w3-theme-l5" style="text-align:center;">
+  <table>
+    <th><tr><td>Identifier</td><td>Value</td></tr></th>
+    <tr *ngFor="let row of finalResult"> 
+      <td item-width="50%"><span>{{row.key}}</span></td>
+      <td><span>{{row.value}}</span> </td>
+       </tr>
+  </table>
+
+</div> -->
+<div class="limiter" style="padding-left:100px" ng-if="displayTable == true">
+		<div class="container-table50">
+			<div class="wrap-table100">
+				<div class="table100 ver1 m-b-110">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">Identifier</th>
+									<th class="cell100 column2">Value</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+                  <tr *ngFor="let row of finalResult"> 
+                      <td item-width="50%"><span>{{row.key}}</span></td>
+                      <td><span>{{row.value}}</span> </td>
+                       </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</form>
